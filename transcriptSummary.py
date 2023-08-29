@@ -6,7 +6,7 @@ tokenizer = BartTokenizer.from_pretrained(model_name)
 model = BartForConditionalGeneration.from_pretrained(model_name)
 
 # Load the transcript file generated using genTranscript.py
-transcript_file = 'example.txt'
+transcript_file = 'transcript.txt'
 
 with open(transcript_file, 'r', encoding='utf-8') as f:
     transcript = f.read()
