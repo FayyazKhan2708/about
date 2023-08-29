@@ -4,7 +4,7 @@ from youtube_transcript_api import YouTubeTranscriptApi
 VIDEO_URL = 'paste the youtube video link here'
 
 # Create a YouTube object
-yt = YouTube(VIDEO_URL)
+yt = YouTube("url")
 
 # Get the video ID from the URL
 video_id = yt.video_id
@@ -13,7 +13,7 @@ video_id = yt.video_id
 transcript = YouTubeTranscriptApi.get_transcript(video_id)
 
 # Create a .txt file to save the transcript
-output_file = f"{video_id}_transcript.txt"
+output_file = f"transcript.txt"
 
 with open(output_file, 'w', encoding='utf-8') as f:
     for entry in transcript:
