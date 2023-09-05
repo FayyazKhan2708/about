@@ -5,7 +5,7 @@ def tokenize_text(text):
     sentences = re.split(r"\s+", text)
     return sentences
     
-def calculate_sentence_scores(sentences, stopwords):
+def cal_words(sentences, stopwords):
     word_frequencies = Counter()
     sentence_scores = {}
 
@@ -26,11 +26,11 @@ def calculate_sentence_scores(sentences, stopwords):
 
     return sentence_scores
 
-def generate_summary(text, num_sentences=10):
+def get_summary(text, num_sentences=10):
     stopwords = set(["the", "in", "and", "of", "a", "to", "for", "an", "is", "on", "with", "as", "by"])
 
     sentences = tokenize_text(text)
-    sentence_scores = calculate_sentence_scores(sentences, stopwords)
+    sentence_scores = cal_words(sentences, stopwords)
     # print(sentence_scores)
 
     ranked_sentences = sorted(sentence_scores.items(), key=lambda x: x[1], reverse=True)
@@ -46,7 +46,7 @@ input_text = "The action or process of defining. The act of defining; determinat
 
 
 # Summarize the input text
-summary = generate_summary(input_text)
+summary = get_summary(input_text)
 
 # Print the summary
 print(summary)
