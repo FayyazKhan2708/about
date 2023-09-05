@@ -7,7 +7,7 @@ outls = []
 strTranscript = """"""
 
 # tx = YouTubeTranscriptApi.get_transcript('q6fwHkoSMsE')
-tx = YouTubeTranscriptApi.get_transcript('89-iRCL4i4Y')
+tx = YouTubeTranscriptApi.get_transcript('oWXRkO9pmHM')
 for i in tx:
     outtxt = (i['text']) #picks out the text, if not used we get, a json dictionary
     outls.append(outtxt) 
